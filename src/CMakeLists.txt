@@ -1,4 +1,7 @@
 add_executable(lwqq-cli cli.c)
+link_directories(
+	/usr/local/lib
+	)
 
 include_directories(
     ${PROJECT_BINARY_DIR}

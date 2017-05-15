@@ -68,6 +68,7 @@ if(WITH_LIBUV)
     include_directories(${UV_INCLUDE_DIRS})
     set(LWQQ_OTHER_LIBS ${LWQQ_OTHER_LIBS} ${UV_LIBRARIES})
 endif()
+link_directories(/usr/local/lib)
 
 add_library(lwqq-static STATIC ${LWQQ_LIST} )
 set_target_properties(lwqq-static PROPERTIES OUTPUT_NAME lwqq)
@@ -79,6 +80,7 @@ if(WIN32)
       EXPORT_FILE_NAME ${PROJECT_BINARY_DIR}/lwqq_export.h
       )
 endif()
+
 
 target_link_libraries(lwqq
     ${SQLITE_LIBRARIES}
